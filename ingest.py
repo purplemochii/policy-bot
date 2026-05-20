@@ -12,8 +12,8 @@ Settings.embed_model = HuggingFaceEmbedding(
 
 Settings.llm = None
 
-documents = SimpleDirectoryReader(input_files = ["data/docs"]).load_data()
-printf(f"loaded {len(documents)} document chunks")
+documents = SimpleDirectoryReader(input_files = "data/docs").load_data()
+print(f"loaded {len(documents)} document chunks")
 
 db = chromadb.PersistentClient(path = "./chroma_db")
 collection = db.get_or_create_collection("policy_docs")

@@ -27,7 +27,7 @@ vector_store = ChromaVectorStore(chroma_collection = collection)
 index = VectorStoreIndex.from_vector_store(vector_store)
 query_engine = index.as_query_engine(similarity_top_k = 5)
 
-def ask(question, history):
+def ask(question):
     if not question.strip():
         return ""
     response = query_engine.query(question)
@@ -36,7 +36,7 @@ def ask(question, history):
 demo = gr.ChatInterface(
     fn = ask,
     title = "Policy Assistant",
-    description = "Ask questions about company policies."
+    description = "Ask questions about company policies.",
     examples = [
         "What is the leave policy?",
         "What is the process for raising a ticket?",
