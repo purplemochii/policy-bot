@@ -1,0 +1,7 @@
+llama-index
+llama-index-vector-stores-chroma
+llama-index-embeddings-huggingsface
+llama-index-llms-ollama
+chromadb
+gradio
+pypdf
