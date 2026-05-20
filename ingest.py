@@ -12,7 +12,7 @@ Settings.embed_model = HuggingFaceEmbedding(
 
 Settings.llm = None
 
-documents = SimpleDirectoryReader(input_files = "data/docs").load_data()
+documents = SimpleDirectoryReader(input_dir = "docs").load_data()
 print(f"loaded {len(documents)} document chunks")
 
 db = chromadb.PersistentClient(path = "./chroma_db")
